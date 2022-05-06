@@ -3,14 +3,41 @@
   <head>
     <!-- 文字コード変更 -->
     <meta charset="UTF-8">
+    <script src="main2.js"></script>
+
+    <style type="text/css">
+      ol
+      {
+        column-count: auto;
+        column-width: 50px;
+      }
+    </style>
   </head>
 
   <body>
-    <input type="text" name="SongName" size="45">
-    <input type="button" name="AddButton" value="追加" onclick="test()">
+    <h1>曲名追加</h1>
+    <input type="text" id="SongName" name="SongName" size="45">
+    <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
 
-    <ol>
-      
-    </ol>
+    <br>
+    <h1>フォントサイズ変更</h1>
+    <input type="range" min="0" max="100" step="10">
+
+    <ol id="SongList"></ol>
   </body>
+
+  <script>
+  function AddSong()
+  {
+    var element = document.getElementById("SongList");
+    var text = document.getElementById("SongName");
+
+    var li = document.createElement('li');
+    li.textContent = text.value;
+    document.getElementById('SongList').appendChild(li);
+
+    text.value = "";
+  }
+  </script>
+
 </html>
