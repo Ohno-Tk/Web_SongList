@@ -8,47 +8,65 @@
     <style type="text/css">
       ol
       {
-        margin-left: 1em;
-        /*column-count: auto;
+        /*margin-left: 1em;
+        column-count: 3;
         column-width: 50px;*/
       }
     </style>
   </head>
 
   <body>
-    <h1>曲名追加</h1>
-    <input type="text" id="SongName" name="SongName" size="45">
-    <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
-
     <br>
     <table>
       <tr>
         <th></th>
-        <th>サイズ</th>
+        <th>文字色</th>
+        <th>フチ色</th>
       </tr>
       <tr>
         <td>曲名 :</td>
         <td>
-          <label>
+          <input id="color-dialog" type="color" value="#ffffff">
+        </td>
+        <td>
+          <input id="color-dialog" type="color" value="#000000">
+        </td>
+        <td>
+          　　背景色：<input id="color-dialog" type="color" value="#00ff00">
+        </td>
+    </table>
+
+    <br>
+    <!-- フォント・縁取りサイズ変更 -->
+    <table>
+      <tr>
+        <th></th>
+        <th>サイズ</th>
+        <th>縁取り</th>
+      </tr>
+      <tr>
+        <td>曲名 :</td>
+        <td>
+          <label><!-- フォント -->
             <input id="FontSizeSlider" type="range" min="0" max="50" step="1" value="20">
             <span id="FontSize"></span>
+          </label>
+        </td>
+        <td>
+          <label><!-- 縁取り -->
+            <input id="BorderingSizeSlider" type="range" min="0" max="20" step="1" value="0">
+            <span id="BorderingSize"></span>
           </label>
         </td>
       </tr>
     </table>
 
+    <br>
+
+    <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
+    <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
+
     <ol id="SongList">
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
-      <li>aaaaaa</li>
     </ol>
   </body>
 
@@ -67,6 +85,10 @@
 
     text.value = "";
   }
+
+  //
+  // 曲名フォントサイズ関連
+  //
 
   //
   // 初期化処理
@@ -93,6 +115,37 @@
 
     //サイズを変更される要素
     $('#SongList').css({'font-size':val});
+  });
+
+  //
+  // 曲名縁取り関連
+  //
+
+  //
+  // 曲名縁取り関連
+  //
+  $('#BorderingSizeSlider').ready(function ()
+  {
+    //縁取りのサイズを表示する要素
+    $('#BorderingSize').html('2px');
+
+    //縁取りのサイズを変更される要素
+    $('#SongList').css({'text-stroke':'2px'});
+  });
+
+  //
+  // 曲名縁取りサイズ変更
+  //
+  $('#BorderingSizeSlider').on('input', function()
+  {
+    let val = $(this).val();
+    val += 'px';
+
+    //サイズを表示する要素
+    $('#BorderingSize').html(val);
+
+    //サイズを変更される要素
+    $('#SongList').css({'text-stroke':val});
   });
   </script>
 
