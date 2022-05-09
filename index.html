@@ -3,13 +3,14 @@
   <head>
     <!-- 文字コード変更 -->
     <meta charset="UTF-8">
-    <script src="main2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <style type="text/css">
       ol
       {
-        column-count: auto;
-        column-width: 50px;
+        margin-left: 1em;
+        /*column-count: auto;
+        column-width: 50px;*/
       }
     </style>
   </head>
@@ -20,13 +21,41 @@
     <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
 
     <br>
-    <h1>フォントサイズ変更</h1>
-    <input type="range" min="0" max="100" step="10">
+    <table>
+      <tr>
+        <th></th>
+        <th>サイズ</th>
+      </tr>
+      <tr>
+        <td>曲名 :</td>
+        <td>
+          <label>
+            <input id="FontSizeSlider" type="range" min="0" max="50" step="1" value="20">
+            <span id="FontSize"></span>
+          </label>
+        </td>
+      </tr>
+    </table>
 
-    <ol id="SongList"></ol>
+    <ol id="SongList">
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+      <li>aaaaaa</li>
+    </ol>
   </body>
 
   <script>
+  //
+  // 曲名追加
+  //
   function AddSong()
   {
     var element = document.getElementById("SongList");
@@ -38,6 +67,33 @@
 
     text.value = "";
   }
+
+  //
+  // 初期化処理
+  //
+  $('#FontSizeSlider').ready(function ()
+  {
+    //サイズを表示する要素
+    $('#FontSize').html('20px');
+
+    //サイズを変更される要素
+    $('#SongList').css({'font-size':'20px'});
+  });
+
+  //
+  // 曲名フォントサイズ変更
+  //
+  $('#FontSizeSlider').on('input', function()
+  {
+    let val = $(this).val();
+    val += 'px';
+
+    //サイズを表示する要素
+    $('#FontSize').html(val);
+
+    //サイズを変更される要素
+    $('#SongList').css({'font-size':val});
+  });
   </script>
 
 </html>
