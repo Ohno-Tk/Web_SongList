@@ -8,6 +8,7 @@
     <style type="text/css">
       ol
       {
+        background-color: aqua;
         /*margin-left: 1em;
         column-count: 3;
         column-width: 50px;*/
@@ -17,6 +18,7 @@
 
   <body>
     <br>
+    <!-- 色変更 -->
     <table>
       <tr>
         <th></th>
@@ -26,10 +28,10 @@
       <tr>
         <td>曲名 :</td>
         <td>
-          <input id="color-dialog" type="color" value="#ffffff">
+          <input id="SongName_ColorDialog" type="color" value="#ffffff">
         </td>
         <td>
-          <input id="color-dialog" type="color" value="#000000">
+          <input id="SongName_Bordering_ColorDialog" type="color" value="#000000">
         </td>
         <td>
           　　背景色：<input id="color-dialog" type="color" value="#00ff00">
@@ -37,7 +39,7 @@
     </table>
 
     <br>
-    <!-- フォント・縁取りサイズ変更 -->
+    <!-- サイズ変更 -->
     <table>
       <tr>
         <th></th>
@@ -48,25 +50,27 @@
         <td>曲名 :</td>
         <td>
           <label><!-- フォント -->
-            <input id="FontSizeSlider" type="range" min="0" max="50" step="1" value="20">
-            <span id="FontSize"></span>
+            <input id="SongName_FontSizeSlider" type="range" min="0" max="50" step="1" value="20">
+            　<span id="FontSize"></span>
           </label>
         </td>
         <td>
           <label><!-- 縁取り -->
-            <input id="BorderingSizeSlider" type="range" min="0" max="20" step="1" value="0">
-            <span id="BorderingSize"></span>
+            　　<input id="SongName_BorderingSizeSlider" type="range" min="0" max="20" step="1" value="0">
+            　<span id="BorderingSize"></span>
           </label>
         </td>
       </tr>
     </table>
 
     <br>
-
+    <!-- 曲名入力 -->
     <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
     <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
 
+    <!-- 曲名リスト -->
     <ol id="SongList">
+      <li>aaaaa</li>
     </ol>
   </body>
 
@@ -87,25 +91,41 @@
   }
 
   //
+  // 曲名文字色関連
+  //
+  $('#SongName_ColorDialog').on('change', function()
+  {
+    let val = $(this).val();
+
+    console.log("曲名文字色："+val);
+
+    // 色を変更する要素
+    $('#SongList').css({'color':val});
+  });
+
+
+  //
   // 曲名フォントサイズ関連
   //
 
   //
   // 初期化処理
   //
-  $('#FontSizeSlider').ready(function ()
+  $('#SongName_FontSizeSlider').ready(function ()
   {
+    const DefaultFontSize = "20px";
+
     //サイズを表示する要素
-    $('#FontSize').html('20px');
+    $('#FontSize').html(DefaultFontSize);
 
     //サイズを変更される要素
-    $('#SongList').css({'font-size':'20px'});
+    $('#SongList').css({'font-size':DefaultFontSize});
   });
 
   //
   // 曲名フォントサイズ変更
   //
-  $('#FontSizeSlider').on('input', function()
+  $('#SongName_FontSizeSlider').on('input', function()
   {
     let val = $(this).val();
     val += 'px';
@@ -122,21 +142,36 @@
   //
 
   //
-  // 曲名縁取り関連
+  // 初期化
   //
-  $('#BorderingSizeSlider').ready(function ()
+  $('#SongName_BorderingSizeSlider').ready(function ()
   {
+    const DefaultBorderingSize = "0px";
+
     //縁取りのサイズを表示する要素
-    $('#BorderingSize').html('2px');
+    $('#BorderingSize').html(DefaultBorderingSize);
 
     //縁取りのサイズを変更される要素
-    $('#SongList').css({'text-stroke':'2px'});
+    $('#SongList').css({'text-stroke':DefaultBorderingSize});
+  });
+
+  //
+  // 色
+  //
+  $('#SongName_Bordering_ColorDialog').on('change', function()
+  {
+    let val = $(this).val();
+
+    console.log("曲名文字色："+val);
+
+    // 色を変更する要素
+    $('#SongList').css({'text-stroke-color':val});
   });
 
   //
   // 曲名縁取りサイズ変更
   //
-  $('#BorderingSizeSlider').on('input', function()
+  $('#SongName_BorderingSizeSlider').on('input', function()
   {
     let val = $(this).val();
     val += 'px';
@@ -146,6 +181,9 @@
 
     //サイズを変更される要素
     $('#SongList').css({'text-stroke':val});
+
+    // text-strokeを更新すると自動的に黒になるのでtext-stroke-colorも更新
+    $('#SongList').css({'text-stroke-color':$('#SongName_Bordering_ColorDialog').val()});
   });
   </script>
 
