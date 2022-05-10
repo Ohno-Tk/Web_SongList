@@ -96,18 +96,23 @@
     $(window).on('load', function() {
       console.log("load");
 
-      // 背景色変更
+      // 背景色
       $('body').css({'background-color':$('#background_ColorDialog').val()});
-    });
 
-    //
-    // 背景色
-    //
-    //$('body').ready(function ()
-    //{
-    //  //alert ('init');
-    //  $(this).css({'font-size':$('#background_ColorDialog').val()});
-    //});
+      // 曲名フォントサイズ
+      const DefaultFontSize = "30px";
+      //サイズを表示する要素
+      $('#FontSize').html(DefaultFontSize);
+      //サイズを変更される要素
+      $('#SongList').css({'font-size':DefaultFontSize});
+
+      // 曲名縁取りフォントサイズ
+      const DefaultBorderingSize = "0px";
+      //縁取りのサイズを表示する要素
+      $('#BorderingSize').html(DefaultBorderingSize);
+      //縁取りのサイズを変更される要素
+      $('#SongList').css({'text-stroke':DefaultBorderingSize});
+    });
 
     //
     // 曲名追加
@@ -156,20 +161,6 @@
     //
 
     //
-    // 初期化処理
-    //
-    $('#SongName_FontSizeSlider').ready(function ()
-    {
-      const DefaultFontSize = "30px";
-
-      //サイズを表示する要素
-      $('#FontSize').html(DefaultFontSize);
-
-      //サイズを変更される要素
-      $('#SongList').css({'font-size':DefaultFontSize});
-    });
-
-    //
     // 曲名フォントサイズ変更
     //
     $('#SongName_FontSizeSlider').on('input', function()
@@ -187,20 +178,6 @@
     //
     // 曲名縁取り関連
     //
-
-    //
-    // 初期化
-    //
-    $('#SongName_BorderingSizeSlider').ready(function ()
-    {
-      const DefaultBorderingSize = "0px";
-
-      //縁取りのサイズを表示する要素
-      $('#BorderingSize').html(DefaultBorderingSize);
-
-      //縁取りのサイズを変更される要素
-      $('#SongList').css({'text-stroke':DefaultBorderingSize});
-    });
 
     //
     // 色
