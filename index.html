@@ -8,15 +8,15 @@
     <style type="text/css">
       body
       {
-        /*background-color:green;*/
         margin: 0;
       }
 
       ol
       {
-        margin-left: 1em;
-        /*column-count: 3;
-        column-width: 50px;*/
+        margin-top: 0px;
+        margin-left: 2em;
+        column-count: 3;
+        column-gap:1px;
       }
 
       #Settings
@@ -61,7 +61,7 @@
           <td>曲名 :</td>
           <td>
             <label><!-- フォント -->
-              <input id="SongName_FontSizeSlider" type="range" min="0" max="50" step="1" value="30">
+              <input id="SongName_FontSizeSlider" type="range" min="0" max="100" step="1" value="30">
               　<span id="FontSize"></span>
             </label>
           </td>
@@ -75,6 +75,13 @@
       </table>
 
       <br>
+
+      <label>
+        段組み：<input id="ColumnsSlider" type="range" min="1" max="5" step="1" value="0">
+        　<span id="Columns"></span>
+      </label>
+      
+      <br><br>
       <!-- 曲名入力 -->
       <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
       <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
@@ -86,7 +93,21 @@
     <!-- 曲名リスト -->
     <ol id="SongList">
       <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
+      <li>aaaaa</li>
     </ol>
+
+
+    <script type="text/javascript" src="ColorDialog.js"></script>
+    <script type="text/javascript" src="Slider.js"></script>
   </body>
 
   <script>
@@ -126,88 +147,8 @@
       li.textContent = text.value;
       document.getElementById('SongList').appendChild(li);
 
+      // テキストボックスを初期化
       text.value = "";
     }
-
-    //
-    // 背景色
-    //
-    $('#background_ColorDialog').on('change', function()
-    {
-      let val = $(this).val();
-
-      console.log("背景色："+val);
-
-      // 色を変更する要素
-      $('body').css({'background-color':val});
-    });
-
-    //
-    // 曲名文字色関連
-    //
-    $('#SongName_ColorDialog').on('change', function()
-    {
-      let val = $(this).val();
-
-      console.log("曲名文字色："+val);
-
-      // 色を変更する要素
-      $('#SongList').css({'color':val});
-    });
-
-
-    //
-    // 曲名フォントサイズ関連
-    //
-
-    //
-    // 曲名フォントサイズ変更
-    //
-    $('#SongName_FontSizeSlider').on('input', function()
-    {
-      let val = $(this).val();
-      val += 'px';
-
-      //サイズを表示する要素
-      $('#FontSize').html(val);
-
-      //サイズを変更される要素
-      $('#SongList').css({'font-size':val});
-    });
-
-    //
-    // 曲名縁取り関連
-    //
-
-    //
-    // 色
-    //
-    $('#SongName_Bordering_ColorDialog').on('change', function()
-    {
-      let val = $(this).val();
-
-      console.log("曲名文字色："+val);
-
-      // 色を変更する要素
-      $('#SongList').css({'text-stroke-color':val});
-    });
-
-    //
-    // 曲名縁取りサイズ変更
-    //
-    $('#SongName_BorderingSizeSlider').on('input', function()
-    {
-      let val = $(this).val();
-      val += 'px';
-
-      //サイズを表示する要素
-      $('#BorderingSize').html(val);
-
-      //サイズを変更される要素
-      $('#SongList').css({'text-stroke':val});
-
-      // text-strokeを更新すると自動的に黒になるのでtext-stroke-colorも更新
-      $('#SongList').css({'text-stroke-color':$('#SongName_Bordering_ColorDialog').val()});
-    });
   </script>
 </html>
