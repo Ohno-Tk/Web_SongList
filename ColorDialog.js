@@ -33,7 +33,7 @@ $('#SongName_Bordering_ColorDialog').on('change', function()
 {
   let val = $(this).val();
 
-  console.log("曲名文字色："+val);
+  console.log("縁取り　色："+val);
 
   // 色を変更する要素
   $('ol').css({'text-stroke-color':val});
