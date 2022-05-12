@@ -33,15 +33,11 @@
         <tr>
           <th></th>
           <th>文字色</th>
-          <th>フチ色</th>
         </tr>
         <tr>
           <td>曲名 :</td>
           <td>
             <input id="SongName_ColorDialog" type="color" value="#ffffff">
-          </td>
-          <td>
-            <input id="SongName_Bordering_ColorDialog" type="color" value="#000000">
           </td>
           <td>
             　　背景色：<input id="background_ColorDialog" type="color" value="#00ff00">
@@ -54,7 +50,6 @@
         <tr>
           <th></th>
           <th>サイズ</th>
-          <th>縁取り</th>
         </tr>
         <tr>
           <td>曲名 :</td>
@@ -62,12 +57,6 @@
             <label><!-- フォント -->
               <input id="SongName_FontSizeSlider" type="range" min="0" max="50" step="1" value="50">
               <span id="FontSize"></span>
-            </label>
-          </td>
-          <td>
-            <label><!-- 縁取り -->
-              　　<input id="SongName_BorderingSizeSlider" type="range" min="0" max="20" step="1" value="0">
-              <span id="BorderingSize"></span>
             </label>
           </td>
         </tr>
@@ -123,13 +112,6 @@
       $('#FontSize').html(DefaultFontSize);
       //サイズを変更される要素
       $('#SongList').css({'font-size':DefaultFontSize});
-
-      // 縁取りフォントサイズ
-      const DefaultBorderingSize = $('#SongName_BorderingSizeSlider').val() + "px";
-      // 縁取りのサイズを表示する要素
-      $('#BorderingSize').html(DefaultBorderingSize);
-      // 縁取りのサイズを変更される要素
-      $('#SongList').css({'text-stroke':DefaultBorderingSize});
 
       // 段組みを変更する要素
       $('#SongList').css({'column-count':$('#ColumnsSlider').val()});
