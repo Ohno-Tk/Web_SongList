@@ -5,7 +5,14 @@
  
  
 # DEMO(デモ動画や図解)
+## 曲追加とサイズ変更
+![曲追加とサイズ変更](https://user-images.githubusercontent.com/51406176/168076712-9713245f-c986-4be8-bfc1-6590c1d882ae.gif)
 
+## 色変更と段組み
+![色変更と段組み](https://user-images.githubusercontent.com/51406176/168076389-3d1b74c9-6e72-475f-b694-b84bac7cf813.gif)
+
+## 曲名削除
+![曲名削除](https://user-images.githubusercontent.com/51406176/168077133-9bd640fd-8d13-4541-a35b-9306896bf956.gif)
 
  
 # Features(セールスポイントや差別化)
