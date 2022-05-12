@@ -106,12 +106,16 @@
       // 背景色
       $('body').css({'background-color':$('#background_ColorDialog').val()});
 
-      // 曲名フォントサイズ
+      // フォントサイズ
       const DefaultFontSize = $('#SongName_FontSizeSlider').val() + "px";
-      //サイズを表示する要素
+      // フォントサイズを表示する要素
       $('#FontSize').html(DefaultFontSize);
-      //サイズを変更される要素
+      // フォントサイズを変更される要素
       $('#SongList').css({'font-size':DefaultFontSize});
+
+      // フォント色
+      $('#SongList').css({'font-size':DefaultFontSize});
+      $('#SongList').css({'color':$('#SongName_ColorDialog').val()});
 
       // 段組みを変更する要素
       $('#SongList').css({'column-count':$('#ColumnsSlider').val()});
