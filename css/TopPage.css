@@ -1,0 +1,17 @@
+html,body,h2
+{
+  margin: 0;
+}
+
+#SongList
+{
+  margin-top: 0px;
+  margin-left: 1em;
+  width: 900px;
+  word-wrap: break-word;/* 枠内に収まらない半角英数字を折り返す */
+}
+
+#Settings
+{
+  background-color: white;
+}

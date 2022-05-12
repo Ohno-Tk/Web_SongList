@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コード変更 -->
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/TopPage.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/initialize.js"></script>
+
+  </head>
+
+  <body>
+    <div id="Settings">
+      <h2>■設定</h2>
+
+      <!-- 色変更 -->
+      <table>
+        <tr>
+          <th></th>
+          <th>文字色</th>
+        </tr>
+        <tr>
+          <td>曲名 :</td>
+          <td>
+            <input id="SongName_ColorDialog" type="color" value="#ffffff">
+          </td>
+          <td>
+            　　背景色：<input id="background_ColorDialog" type="color" value="#00ff00">
+          </td>
+      </table>
+
+      <!-- サイズ変更 -->
+      <table>
+        <tr>
+          <th></th>
+          <th>サイズ</th>
+          <th>太さ</th>
+        </tr>
+        <tr>
+          <td>曲名 :</td>
+          <td><!-- フォント -->
+            <label>
+              <input id="SongName_FontSizeSlider" type="range" min="0" max="100" step="1" value="25">
+              <span id="FontSize"></span>　
+            </label>
+          </td>
+          <td><!-- 太さ -->
+            <select id="SongName_FontWeightSelect">
+              <option value="normal">標準</option>
+              <option value="bold">太め</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <br>
+
+      <!-- 曲名入力 -->
+      <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
+      <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
+      <input type="button" name="DeleteButton" value="取り消し" onclick="Cancel()"><br>
+
+      <br>
+      <input type="button" name="AllDeleteButton" value="全削除" onclick="AllDelete()">
+
+      <label>
+        段組み：<input id="ColumnsSlider" type="range" min="1" max="3" step="1" value="0">
+        <span id="Columns"></span>
+      </label>
+
+      <hr size="5px">
+    </div>
+
+    <!-- 曲名リスト -->
+    <ul id="SongList"></ul>
+
+    <script type="text/javascript" src="js/ColorDialog.js"></script>
+    <script type="text/javascript" src="js/Slider.js"></script>
+    <script type="text/javascript" src="js/SelectBox.js"></script>
+    <script type="text/javascript" src="js/SongList.js"></script>
+  </body>
+</html>
