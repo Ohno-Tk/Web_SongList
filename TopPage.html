@@ -4,8 +4,11 @@
     <!-- 文字コード変更 -->
     <meta charset="UTF-8">
 
+    <!-- css -->
     <link rel="stylesheet" href="css/TopPage.css">
+    <link rel="stylesheet" href="css/HelpIcon.css">
 
+    <!-- javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/initialize.js"></script>
 
@@ -14,6 +17,8 @@
   <body>
     <div id="Settings">
       <h2>■設定</h2>
+
+      <a href="#" class="help">ヘルプ</a>
 
       <!-- 色変更 -->
       <table>
@@ -60,11 +65,13 @@
       <!-- 曲名入力 -->
       <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
       <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
-      <input type="button" name="DeleteButton" value="取り消し" onclick="Cancel()"><br>
+      <input type="button" name="DeleteButton" value="１つ削除" onclick="Cancel()"><br>
 
       <br>
-      <input type="button" name="AllDeleteButton" value="全削除" onclick="AllDelete()">
+      <!-- 曲名を全て削除 -->
+      <input type="button" name="AllDeleteButton" value="曲名を全て削除" onclick="AllDelete()">
 
+      <!-- 段組み -->
       <label>
         段組み：<input id="ColumnsSlider" type="range" min="1" max="3" step="1" value="0">
         <span id="Columns"></span>
