@@ -4,6 +4,9 @@
 $(window).on('load', function() {
   console.log("load");
 
+  // フォント色
+  $('#SongList').css({'color':$('#SongName_ColorDialog').val()});
+
   // 背景色
   $('body').css({'background-color':$('#background_ColorDialog').val()});
 
@@ -14,9 +17,8 @@ $(window).on('load', function() {
   // フォントサイズを変更される要素
   $('#SongList').css({'font-size':DefaultFontSize});
 
-  // フォント色
-  $('#SongList').css({'font-size':DefaultFontSize});
-  $('#SongList').css({'color':$('#SongName_ColorDialog').val()});
+  // 太さ
+  $('#SongList').css({'font-weight':$('#SongName_FontWeightSelect').val()});
 
   // 段組みを変更する要素
   $('#SongList').css({'column-count':$('#ColumnsSlider').val()});

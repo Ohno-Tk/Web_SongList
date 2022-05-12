@@ -1,5 +1,5 @@
 //
-// 曲名フォントサイズ変更
+// 曲名フォントサイズ
 //
 $('#SongName_FontSizeSlider').on('input', function()
 {
