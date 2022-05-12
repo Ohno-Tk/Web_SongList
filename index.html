@@ -7,21 +7,17 @@
     <script type="text/javascript" src="initialize.js"></script>
 
     <style type="text/css">
-      body
-      {
-        margin: 0;
-      }
-
       html,body
       {
-        overflow: hidden
+        overflow: hidden;
+        margin: 0;
       }
 
       ol
       {
         margin-top: 0px;
         margin-left: 2em;
-        font-weight:bold;/*太字*/
+        /*font-weight:bold;太字*/
       }
 
       #Settings
@@ -56,14 +52,21 @@
         <tr>
           <th></th>
           <th>サイズ</th>
+          <th>太さ</th>
         </tr>
         <tr>
           <td>曲名 :</td>
-          <td>
-            <label><!-- フォント -->
+          <td><!-- フォント -->
+            <label>
               <input id="SongName_FontSizeSlider" type="range" min="0" max="50" step="1" value="50">
-              <span id="FontSize"></span>
+              <span id="FontSize"></span>　
             </label>
+          </td>
+          <td><!-- 太さ -->
+            <select id="SongName_FontWeightSelect">
+              <option value="normal">標準</option>
+              <option value="bold">太め</option>
+            </select>
           </td>
         </tr>
       </table>
@@ -100,6 +103,7 @@
 
     <script type="text/javascript" src="ColorDialog.js"></script>
     <script type="text/javascript" src="Slider.js"></script>
+    <script type="text/javascript" src="SelectBox.js"></script>
   </body>
 
   <script>
