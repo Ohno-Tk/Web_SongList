@@ -31,3 +31,19 @@ $('#SongName_BorderingSizeSlider').on('input', function()
   // text-strokeを更新すると自動的に黒になるのでtext-stroke-colorも更新
   $('#SongList').css({'text-stroke-color':$('#SongName_Bordering_ColorDialog').val()});
 });
+
+
+//
+// 段組み
+//
+$('#ColumnsSlider').on('input', function()
+{
+  let val = $(this).val();
+
+  // 段組みを変更する要素
+  $('#SongList').css({'column-count':val});
+
+  val += '段';
+  //段組みを表示する要素
+  $('#Columns').html(val);
+});
