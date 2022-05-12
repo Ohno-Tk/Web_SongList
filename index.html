@@ -9,7 +9,7 @@
     <style type="text/css">
       html,body
       {
-        overflow: hidden;
+        /*overflow: hidden;*/
         margin: 0;
       }
 
@@ -17,7 +17,8 @@
       {
         margin-top: 0px;
         margin-left: 2em;
-        /*font-weight:bold;太字*/
+        /*font-weight:bold;太字
+        flex-wrap: wrap;*/
       }
 
       #Settings
@@ -75,7 +76,8 @@
 
       <!-- 曲名入力 -->
       <input type="text" id="SongName" name="SongName" size="45" placeholder="曲名を記入してください">
-      <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()"><br>
+      <input type="button" id="SongAddButton" name="AddButton" value="追加" onclick="AddSong()">
+      <input type="button" name="DeleteButton" value="取り消し" onclick="DeleteSong()"><br>
 
       <label>
         段組み：<input id="ColumnsSlider" type="range" min="1" max="5" step="1" value="0">
@@ -88,18 +90,28 @@
 
     <!-- 曲名リスト -->
     <ol id="SongList">
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
-      <li>aaaaa</li>
+      <!--<li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>
+      <li>このピアノでお前を8759632145回ぶん殴る</li>-->
     </ol>
+
+    <div id="SongList">
+
+    </div>
 
     <script type="text/javascript" src="ColorDialog.js"></script>
     <script type="text/javascript" src="Slider.js"></script>
@@ -121,6 +133,14 @@
 
       // テキストボックスを初期化
       text.value = "";
+    }
+
+    // 曲名削除
+    function DeleteSong()
+    {
+      var list_element = document.getElementById("SongList");
+
+      var remove_element = list_element.removeChild(list_element.lastElementChild);
     }
   </script>
 </html>
