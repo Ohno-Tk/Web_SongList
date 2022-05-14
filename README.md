@@ -22,7 +22,7 @@
  
 # Requirement(ライブラリなど)
  
-- jquery 3.4.1
+- <img src="https://img.shields.io/badge/-jQuery-0769AD.svg?logo=jquery&style=flat"> 3.4.1
  
 # Note(注意点など)
 - [WIKIを参照してください](https://github.com/Ohno-Tk/Tool_SongList/wiki)
