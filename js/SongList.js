@@ -28,7 +28,7 @@ function Cancel()
 }
 
 //
-// 曲名削除
+// 曲名全削除
 //
 function AllDelete()
 {

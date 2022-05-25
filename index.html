@@ -44,12 +44,13 @@
           <th></th>
           <th>サイズ</th>
           <th>太さ</th>
+          <th>フォント</th>
         </tr>
         <tr>
           <td>曲名 :</td>
-          <td><!-- フォント -->
+          <td><!-- フォントサイズ -->
             <label>
-              <input id="SongName_FontSizeSlider" type="range" min="0" max="100" step="1" value="25">
+              <input id="SongName_FontSizeSlider" type="range" min="25" max="100" step="1" value="25">
               <span id="FontSize"></span>　
             </label>
           </td>
@@ -57,6 +58,15 @@
             <select id="SongName_FontWeightSelect">
               <option value="normal">標準</option>
               <option value="bold">太め</option>
+            </select>
+          </td>
+          <td><!-- フォント -->
+            <select id="SongName_FontNameSelect">
+              <option value="sans-serif">ゴシック体</option>
+              <option value="serif">明朝体</option>
+              <option value="cursive">筆記体</option>
+              <option value="fantasy">装飾系</option>
+              <option value="monospace">等幅系</option>
             </select>
           </td>
         </tr>
