@@ -21,7 +21,9 @@
 - サイズ・色などが変えられるため、その人に合った配信画面が作れる
  
 # Requirement(ライブラリなど)
- 
+ - <img src="https://custom-icon-badges.herokuapp.com/badge/HTML-e34c26.svg?logo=HTML&logoColor=white">
+- <img src="https://custom-icon-badges.herokuapp.com/badge/CSS-563d7c.svg?logo=css3">
+- <img src="https://custom-icon-badges.herokuapp.com/badge/JavaScript-f1e05a.svg?logo=JavaScript&logoColor=white">
 - <img src="https://img.shields.io/badge/-jQuery-0769AD.svg?logo=jquery&style=flat"> 3.4.1
  
 # Note(注意点など)
